@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History Plus</title>
+  <link rel="stylesheet" href="sidebar.css">
+</head>
+<body>
+  <header class="header">
+    <!-- Barra de Pesquisa de Texto -->
+    <div class="search-box">
+      <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+      </svg>
+      <input
+        type="search"
+        id="searchInput"
+        autocomplete="off"
+        spellcheck="false"
+        data-i18n-attr="placeholder:searchPlaceholder, aria-label:searchPlaceholder"
+      />
+      <button id="clearSearchBtn" class="icon-btn clear-search-btn" type="button" data-i18n-attr="aria-label:clearSearch, title:clearSearch" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Seletor de Data (Material 3) -->
+    <div class="date-selector-wrapper">
+      <div class="date-selector-bar">
+        <button
+          id="dateTriggerBtn"
+          class="date-trigger-btn"
+          type="button"
+          aria-haspopup="dialog"
+          aria-expanded="false"
+          aria-controls="calendarPopover"
+        >
+          <svg class="calendar-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/>
+          </svg>
+          <span id="dateTriggerLabel" class="date-trigger-label" data-i18n="allDates"></span>
+          <svg class="chevron-down-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg>
+        </button>
+
+        <div class="date-nav-actions">
+          <button
+            id="clearDateBtn"
+            class="icon-btn date-clear-btn"
+            type="button"
+            data-i18n-attr="title:clearDateFilter, aria-label:clearDateFilter"
+            hidden
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </button>
+          <div class="date-step-group" role="group" data-i18n-attr="aria-label:navigateDays">
+            <button
+              id="prevDayBtn"
+              class="icon-btn step-day-btn"
+              type="button"
+              data-i18n-attr="title:previousDay, aria-label:previousDay"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+              </svg>
+            </button>
+            <button
+              id="nextDayBtn"
+              class="icon-btn step-day-btn"
+              type="button"
+              data-i18n-attr="title:nextDay, aria-label:nextDay"
+              disabled
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Popover de Calendário Material 3 -->
+      <div
+        id="calendarPopover"
+        class="calendar-popover"
+        role="dialog"
+        aria-modal="false"
+        data-i18n-attr="aria-label:selectDate"
+        hidden
+      >
+        <!-- Alternador Dia único vs Período -->
+        <div class="calendar-mode-tabs" role="tablist" data-i18n-attr="aria-label:dateSelectionMode">
+          <button
+            id="modeSingleBtn"
+            class="mode-tab active"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            data-mode="single"
+            data-i18n="modeSingle"
+          ></button>
+          <button
+            id="modeRangeBtn"
+            class="mode-tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            data-mode="range"
+            data-i18n="modeRange"
+          ></button>
+        </div>
+
+        <!-- Resumo do intervalo quando em modo Período -->
+        <div id="rangeSummaryBar" class="range-summary-bar" hidden>
+          <div class="range-slot" id="rangeStartSlot">
+            <span class="range-slot-label" data-i18n="rangeStart"></span>
+            <span id="rangeStartText" class="range-slot-value" data-i18n="rangeSelect"></span>
+          </div>
+          <span class="range-arrow" aria-hidden="true">→</span>
+          <div class="range-slot" id="rangeEndSlot">
+            <span class="range-slot-label" data-i18n="rangeEnd"></span>
+            <span id="rangeEndText" class="range-slot-value" data-i18n="rangeSelect"></span>
+          </div>
+        </div>
+
+        <!-- Cabeçalho do Mês/Ano -->
+        <div class="calendar-header">
+          <span id="calendarMonthLabel" class="calendar-month-label"></span>
+          <div class="calendar-month-nav">
+            <button id="prevMonthBtn" class="icon-btn month-nav-btn" type="button" data-i18n-attr="title:previousMonth, aria-label:previousMonth">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+              </svg>
+            </button>
+            <button id="nextMonthBtn" class="icon-btn month-nav-btn" type="button" data-i18n-attr="title:nextMonth, aria-label:nextMonth">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Cabeçalho dos Dias da Semana (preenchido pelo sidebar.js conforme o idioma) -->
+        <div class="calendar-weekdays" aria-hidden="true"></div>
+
+        <!-- Grade de Dias -->
+        <div id="calendarGrid" class="calendar-grid" role="group" data-i18n-attr="aria-label:calendarDays"></div>
+
+        <!-- Rodapé com ações rápidas -->
+        <div class="calendar-footer">
+          <button id="calendarClearBtn" class="calendar-action-btn" type="button" data-i18n="allDates"></button>
+          <button id="calendarTodayBtn" class="calendar-action-btn primary" type="button" data-i18n="today"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Barra de Status / Contagem de Resultados -->
+    <div class="status-bar">
+      <span id="resultsCount" class="results-count" data-i18n="loadingHistory"></span>
+      <button id="clearFiltersBtn" class="clear-filters-link" type="button" data-i18n="clearFilters" hidden></button>
+    </div>
+  </header>
+
+  <main class="content-container">
+    <!-- Lista onde os itens do histórico serão renderizados -->
+    <div id="historyList" class="history-list" role="feed" aria-busy="false"></div>
+
+    <!-- Estado vazio quando não houver resultados -->
+    <div id="emptyState" class="empty-state" hidden>
+      <div class="empty-icon-wrapper">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M13 3a9 9 0 0 0-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.954 8.954 0 0 0 13 21a9 9 0 0 0 0-18zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/>
+        </svg>
+      </div>
+      <p id="emptyTitle" class="empty-title" data-i18n="emptyAllTitle"></p>
+      <p id="emptySubtitle" class="empty-subtitle" data-i18n="emptyAllSubtitle"></p>
+    </div>
+
+    <!-- Indicador de carregamento -->
+    <div id="loadingState" class="loading-state" hidden>
+      <div class="spinner" data-i18n-attr="aria-label:loading"></div>
+    </div>
+  </main>
+
+  <!-- Snackbar para Desfazer Exclusão -->
+  <div id="undoSnackbar" class="undo-snackbar" role="status" aria-live="polite" hidden>
+    <span id="undoMessage" class="undo-message"></span>
+    <div class="undo-actions">
+      <button id="undoBtn" class="undo-btn" type="button" data-i18n="undo"></button>
+      <button id="dismissSnackbarBtn" class="icon-btn snackbar-close-btn" type="button" data-i18n-attr="aria-label:dismiss, title:dismiss">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="sidebar.js"></script>
+</body>
+</html>

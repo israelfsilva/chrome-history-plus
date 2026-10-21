@@ -1,0 +1,8 @@
+# Pacotes gerados por tools/package.sh
+dist/
+
+# Sistema
+.DS_Store
+
+# Python
+__pycache__/

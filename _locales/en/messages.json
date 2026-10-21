@@ -1,0 +1,195 @@
+{
+  "extName": {
+    "message": "History Plus"
+  },
+  "extDescription": {
+    "message": "Your browsing history in the side panel, with search and filtering by day or date range."
+  },
+  "actionTitle": {
+    "message": "Open history in the side panel"
+  },
+  "locale": {
+    "message": "en-US"
+  },
+  "panelTitle": {
+    "message": "History Plus"
+  },
+  "searchPlaceholder": {
+    "message": "Search history"
+  },
+  "clearSearch": {
+    "message": "Clear search"
+  },
+  "allDates": {
+    "message": "All dates"
+  },
+  "clearDateFilter": {
+    "message": "Clear date filter"
+  },
+  "navigateDays": {
+    "message": "Navigate between days"
+  },
+  "previousDay": {
+    "message": "Previous day"
+  },
+  "nextDay": {
+    "message": "Next day"
+  },
+  "selectDate": {
+    "message": "Select date"
+  },
+  "dateSelectionMode": {
+    "message": "Date selection mode"
+  },
+  "modeSingle": {
+    "message": "Single day"
+  },
+  "modeRange": {
+    "message": "Date range"
+  },
+  "rangeStart": {
+    "message": "Start"
+  },
+  "rangeEnd": {
+    "message": "End"
+  },
+  "rangeSelect": {
+    "message": "Select"
+  },
+  "previousMonth": {
+    "message": "Previous month"
+  },
+  "nextMonth": {
+    "message": "Next month"
+  },
+  "calendarDays": {
+    "message": "Days of the month"
+  },
+  "today": {
+    "message": "Today"
+  },
+  "loadingHistory": {
+    "message": "Loading history…"
+  },
+  "clearFilters": {
+    "message": "Clear filters"
+  },
+  "loading": {
+    "message": "Loading"
+  },
+  "undo": {
+    "message": "Undo"
+  },
+  "dismiss": {
+    "message": "Dismiss"
+  },
+  "todayShort": {
+    "message": "Today, $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "yesterdayShort": {
+    "message": "Yesterday, $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "groupOlder": {
+    "message": "Older"
+  },
+  "groupToday": {
+    "message": "Today — $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "groupYesterday": {
+    "message": "Yesterday — $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "resultsNone": {
+    "message": "No items found"
+  },
+  "resultsOne": {
+    "message": "1 item found"
+  },
+  "resultsMany": {
+    "message": "$VALUE$ items found",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "resultsTruncatedSuffix": {
+    "message": " · most recent only"
+  },
+  "resultsTruncatedHint": {
+    "message": "The result limit was reached. Refine your search or date range to see older items."
+  },
+  "snackbarFallbackItem": {
+    "message": "Item"
+  },
+  "snackbarRemoved": {
+    "message": "Removed: $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "snackbarRemovedAllVisits": {
+    "message": "$VALUE$: all visits removed",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "emptySearchTitle": {
+    "message": "No results for “$VALUE$”",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "emptySearchSubtitle": {
+    "message": "Check your search terms or try another date."
+  },
+  "emptyDateTitle": {
+    "message": "No history on this date"
+  },
+  "emptyDateSubtitle": {
+    "message": "No visits were recorded on the selected date."
+  },
+  "emptyAllTitle": {
+    "message": "No history found"
+  },
+  "emptyAllSubtitle": {
+    "message": "Pages you visit will appear here."
+  },
+  "deleteItemTitle": {
+    "message": "Remove from history (all visits to this page)"
+  },
+  "deleteItemLabel": {
+    "message": "Remove from history"
+  },
+  "errorTitle": {
+    "message": "Couldn’t load history"
+  },
+  "errorSubtitle": {
+    "message": "Please try again in a moment."
+  }
+}

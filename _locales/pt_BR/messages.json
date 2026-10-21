@@ -1,0 +1,195 @@
+{
+  "extName": {
+    "message": "History Plus"
+  },
+  "extDescription": {
+    "message": "Seu histórico de navegação no painel lateral, com busca e filtro por dia ou período."
+  },
+  "actionTitle": {
+    "message": "Abrir histórico no painel lateral"
+  },
+  "locale": {
+    "message": "pt-BR"
+  },
+  "panelTitle": {
+    "message": "History Plus"
+  },
+  "searchPlaceholder": {
+    "message": "Pesquisar no histórico"
+  },
+  "clearSearch": {
+    "message": "Limpar pesquisa"
+  },
+  "allDates": {
+    "message": "Todas as datas"
+  },
+  "clearDateFilter": {
+    "message": "Limpar filtro de data"
+  },
+  "navigateDays": {
+    "message": "Navegar entre dias"
+  },
+  "previousDay": {
+    "message": "Dia anterior"
+  },
+  "nextDay": {
+    "message": "Próximo dia"
+  },
+  "selectDate": {
+    "message": "Selecionar data"
+  },
+  "dateSelectionMode": {
+    "message": "Modo de seleção de data"
+  },
+  "modeSingle": {
+    "message": "Dia específico"
+  },
+  "modeRange": {
+    "message": "Período"
+  },
+  "rangeStart": {
+    "message": "Início"
+  },
+  "rangeEnd": {
+    "message": "Fim"
+  },
+  "rangeSelect": {
+    "message": "Selecione"
+  },
+  "previousMonth": {
+    "message": "Mês anterior"
+  },
+  "nextMonth": {
+    "message": "Próximo mês"
+  },
+  "calendarDays": {
+    "message": "Dias do mês"
+  },
+  "today": {
+    "message": "Hoje"
+  },
+  "loadingHistory": {
+    "message": "Carregando histórico…"
+  },
+  "clearFilters": {
+    "message": "Limpar filtros"
+  },
+  "loading": {
+    "message": "Carregando"
+  },
+  "undo": {
+    "message": "Desfazer"
+  },
+  "dismiss": {
+    "message": "Fechar"
+  },
+  "todayShort": {
+    "message": "Hoje, $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "yesterdayShort": {
+    "message": "Ontem, $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "groupOlder": {
+    "message": "Mais antigos"
+  },
+  "groupToday": {
+    "message": "Hoje — $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "groupYesterday": {
+    "message": "Ontem — $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "resultsNone": {
+    "message": "Nenhum item encontrado"
+  },
+  "resultsOne": {
+    "message": "1 item encontrado"
+  },
+  "resultsMany": {
+    "message": "$VALUE$ itens encontrados",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "resultsTruncatedSuffix": {
+    "message": " · somente os mais recentes"
+  },
+  "resultsTruncatedHint": {
+    "message": "O limite de resultados foi atingido. Refine a pesquisa ou o período para ver itens mais antigos."
+  },
+  "snackbarFallbackItem": {
+    "message": "Item"
+  },
+  "snackbarRemoved": {
+    "message": "Removido: $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "snackbarRemovedAllVisits": {
+    "message": "$VALUE$: todas as visitas removidas",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "emptySearchTitle": {
+    "message": "Nenhum resultado para “$VALUE$”",
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
+  },
+  "emptySearchSubtitle": {
+    "message": "Verifique os termos pesquisados ou tente outra data."
+  },
+  "emptyDateTitle": {
+    "message": "Nenhum histórico nesta data"
+  },
+  "emptyDateSubtitle": {
+    "message": "Não encontramos visitas registradas na data selecionada."
+  },
+  "emptyAllTitle": {
+    "message": "Nenhum histórico encontrado"
+  },
+  "emptyAllSubtitle": {
+    "message": "Suas páginas visitadas aparecerão aqui."
+  },
+  "deleteItemTitle": {
+    "message": "Remover do histórico (todas as visitas desta página)"
+  },
+  "deleteItemLabel": {
+    "message": "Remover do histórico"
+  },
+  "errorTitle": {
+    "message": "Não foi possível carregar o histórico"
+  },
+  "errorSubtitle": {
+    "message": "Tente novamente em instantes."
+  }
+}
